@@ -13,60 +13,62 @@
 
 </head>
 
-<body class="text-white" style="background-color:black;">
-    <div class="container">
 
-        <!-- Jumbotron -->
-        <div class="jumbotron text-center" style="background-image: url(https://cdn.theatlantic.com/static/mt/assets/science/0831Pic.jpg); background-size: 100%; height: 100%;">
-            <h1 class="display-4">Mission to Mars</h1>
-            <a  href="/scrape" role="button">Scrape New Data</a>
+<header class="masthead">
+    <div class="container h-100">
+      <div class="row h-100 align-items-center">
+        <div class="col-12 text-center"  id="vpadding">
+          <h1 class="font-weight-light" style="color:black">Mission to Mars</h1>
+          <p><a class="btn btn-primary btn-lg" style="background-color: #FF9D6F; border: 0px;" href="http://127.0.0.1:5000/scrape" role="button">Scrape Mars Facts</a></p>
         </div>
+      </div>
+    </div>
+  </header>
+
+
 
         <!-- News  -->
         <div class="container">
             <h3>Latest Mars News</h3>
-            <h6 >{{ mars_info.news_title }}</h6>
+            <h6 >{{ mars_info.news_title}}</h6>
             <p>{{ mars_info.news_paragraph }}</p>
         </div>
 
         <div class="container">
             <div class="row">
-                <!-- left image-->
                 <div >
                     <h3>Featured Mars Image</h3>
-                    <img src="{{ mars_info.featured_image_url }}" style="max-width:100%; max-height: auto;" alt="Mars Featured Image">
+                    <img src="{{ mars_info.featured_image }}" style="max-width:100%; max-height: auto;" alt="Mars Featured Image">
                 </div>
 
 
-                    <!-- Table -->
-                    <br>
-                    <h3>Mars Facts</h3>
-                    <div style="max-width: 450px; max-height: 150px; font-size: 15px; margin-bottom: 65px;">
-                        {{ mars_info.mars_facts|safe}}
-                    </div>
+
                 </div>
             </div>
         </div>
-
-        <!-- Cards -->
-        <h3 >Mars Hemispheres</h3>
-        <div class="card-deck">
-            <hr>
-            <div class="col-md-12">
-                <div class="row">
-                   
-                    <div class="col-md-6">
-                        <div class="card text-white bg-dark" style="margin: 30px;">
-                            <img class="card-img-top" src="{{ item.img_url }}" />
-                            <div class="card-body">
-                                <p class="card-text">{{ item.title }}</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                </div>
-            </div>
+ <!-- Table -->
+            
+ <h3>Mars Facts</h3>
+ <div >
+     {{ mars_info.mars_facts|safe}}
+ </div>
+<!-- Mars Hemispheres -->
+<div class="row">
+    <div class="col-md-12">
+    <h2 style="text-align:left"><u>Mars Hemispheres</u></h2>
+    </div>
+    </div>
+  <div class="row">
+    {% for n in  mars_info.hemispheres %}
+    <div class="col col-6">
+        <div class="boxmargin">
+          <h3>{{n.img_titles}}</h3>
+            <img style="width:300px" src={{n.full_image_url}} alt={{n.img_url}}>
+            
         </div>
+    </div>
+    {% endfor %}
+
 
         <!-- Bootstrap JS -->
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
