@@ -112,62 +112,7 @@ def scrape():
         
         # store the full image url in a dictionary
         hemisphere_image_urls.append({"title" : title, "img_url" : img_url})
-        #image_titles=[]
-        #titles=soup.find_all('div', class_='description')
-        #for title in titles: 
-        #        h3=title.find('h3').text
-        #        image_titles.append(h3)
-                
 
-        #image_titles
-
-        #partial_url=[]
-        #items=soup.find_all('div', class_='item')
-
-        #for item in items: 
-        #        url=item.find('a')
-        #        href=base_url+url['href']
-        #        partial_url.append(href)
-        #        print(base_url+url['href'])
-        #partial_url
-
-        #browser.visit(partial_url[0])
-        #time.sleep(1)
-        #html=browser.html
-        #soup = bs(html, 'html.parser')
-        #full_image=soup.find('img', class_='wide-image')
-        #full_image=full_image['src']
-        #full_image_url=base_url+full_image
-
-        #full_image_url
-
-        #full_image_url_final=[]
-
-        #for url in partial_url: 
-        #        browser.visit(url)
-        #        html=browser.html
-        #        soup = bs(html, 'html.parser')
-        #        full_image=soup.find('img', class_='wide-image')
-        #        full_image_url_final.append(base_url+full_image['src'])
-                
-        #full_image_url_final
-
-        #image_dict=[]
-        #full_image_url_final
-
-
-        #for i in range(len(image_titles)):
-        #    image_dict.append({'title':image_titles[i],'img_url':full_image_url_final[i]})
-
-        #len(image_titles)
-
-
-
-        #image_dict
-
-        
-
-        # Store data in a dictionary
    
     mars_info = {
         "news_title": news_title,
